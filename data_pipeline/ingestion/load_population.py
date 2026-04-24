@@ -81,10 +81,10 @@ if __name__ == "__main__":
     })
     df = df[df['population'] > 0]
 
-    os.makedirs("data-pipeline/sample_data", exist_ok=True)
-    df.to_csv("data-pipeline/sample_data/peshawar_population.csv", index=False)
+    os.makedirs("data_pipeline/sample_data", exist_ok=True)
+    df.to_csv("data_pipeline/sample_data/peshawar_population.csv", index=False)
     print(f"Saved {len(df)} rows to sample_data/peshawar_population.csv ✔")
 
     # Now test the loader
-    gdf = load_population("data-pipeline/sample_data/peshawar_population.csv")
+    gdf = load_population("data_pipeline/sample_data/peshawar_population.csv")
     print(gdf.head())

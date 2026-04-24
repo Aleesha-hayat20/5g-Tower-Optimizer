@@ -84,7 +84,7 @@ def generate_synthetic_city(
 
 
 if __name__ == "__main__":
-    os.makedirs("data-pipeline/sample_data", exist_ok=True)
+    os.makedirs("data_pipeline/sample_data", exist_ok=True)
 
     print("Generating synthetic Peshawar city data...")
     pop_gdf, bldg_gdf = generate_synthetic_city(
@@ -94,9 +94,9 @@ if __name__ == "__main__":
     )
 
     pop_gdf.drop(columns='geometry').to_csv(
-        "data-pipeline/sample_data/peshawar_test_population.csv", index=False)
+        "data_pipeline/sample_data/peshawar_test_population.csv", index=False)
     bldg_gdf.to_file(
-        "data-pipeline/sample_data/peshawar_test_buildings.geojson", driver='GeoJSON')
+        "data_pipeline/sample_data/peshawar_test_buildings.geojson", driver='GeoJSON')
 
     print(f"Population points: {len(pop_gdf)}")
     print(f"Total population: {pop_gdf['population'].sum():,}")

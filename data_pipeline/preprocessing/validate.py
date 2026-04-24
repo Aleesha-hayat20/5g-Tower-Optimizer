@@ -78,7 +78,26 @@ class DataValidator:
             warnings=warnings,
             stats=stats
         )
+def check_spatial_alignment(self, pop_gdf, bldg_gdf):
+    pop_bounds = pop_gdf.total_bounds   # [minx, miny, maxx, maxy]
+    bldg_bounds = bldg_gdf.total_bounds
 
+    # Overlap calculation
+    overlap_x = max(0, min(pop_bounds[2], bldg_bounds[2]) - max(pop_bounds[0], bldg_bounds[0]))
+    overlap_y = max(0, min(pop_bounds[3], bldg_bounds[3]) - max(pop_bounds[1], bldg_bounds[1]))
+    overlap_area = overlap_x * overlap_y
+
+    pop_area = (pop_bounds[2] - pop_bounds[0]) * (pop_bounds[3] - pop_bounds[1])
+    overlap_pct = (overlap_area / pop_area * 100) if pop_area > 0 else 0.0
+
+    warnings = []
+    if overlap_pct < 50:
+        warnings.append(f"Low spatial overlap: {overlap_pct:.1f}%")
+
+    return {
+        "overlap_percent": round(overlap_pct, 2),
+        "warnings": warnings
+    }
 
 if __name__ == "__main__":
     import pandas as pd
@@ -87,7 +106,7 @@ if __name__ == "__main__":
     print("Testing validate.py...")
 
     # Load population sample
-    df = pd.read_csv("data_pipeline/sample_data/peshawar_population.csv")
+    df = pd.read_csv("data_pipeline/sample_data/peshawar_test_population.csv")
     pop_gdf = gpd.GeoDataFrame(
         df,
         geometry=[Point(r.longitude, r.latitude) for r in df.itertuples()],
