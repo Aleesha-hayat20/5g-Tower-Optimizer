@@ -210,3 +210,6 @@ venv/
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
+cache/
+__pycache__/
+*.pyc
