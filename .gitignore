@@ -68,3 +68,10 @@ redis_data/
 htmlcov/
 .coverage
 coverage.xml
+
+#backend structuring
+backend/venv/
+backend/results_cache/
+backend/.pytest_cache/
+__pycache__/
+*.pyc
