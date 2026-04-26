@@ -8,7 +8,7 @@ This repository contains the backend infrastructure for the **Genetron** system 
 ## 🛠️ Key Responsibilities
 - **GA Optimization Engine**: Implementation of the NSGA-II algorithm for tower placement.
 - **REST API (FastAPI)**: Designing endpoints for simulation triggers, progress polling, and result retrieval.
-- **Fitness Evaluation**: Developing the scoring logic for signal coverage and interference.
+- **Fitness Evaluation**: Developing the scoring logic for network coverage and interference.
 - **Result Logic**: Sanity checking and formatting metrics for spatial rendering.
 
 ---
