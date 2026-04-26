@@ -1,47 +1,42 @@
-# 5G-Tower-Optimizer
-### End-of-Semester_AI_Project/Spring26: The 5G Tower Placement Optimizer
+# 5G-Tower-Optimizer (Backend Core)
+### Aleesha Syeda Hayat - Backend Architecture & API Integration
 
-**SignalProphet V2.4** (Integrated Engine: **GENETRON**) is a spatial AI and optimization platform designed to solve the telecom placement paradox. It leverages multi-objective Genetic Algorithms (NSGA-II) and high-fidelity spectral modeling to determine the mathematically optimal locations for 5G base stations in dense urban environments.
-
----
-
-## 🚀 Key Features
-- **NSGA-II Solver Core**: Simultaneously optimizes for maximum coverage, minimum interference, and optimized cost per tower.
-- **Vectorized Propagation Engine**: High-speed SNR matrix calculations using vectorized signal propagation models (Path Loss + Urban Diffraction).
-- **Interactive Spatial Visualization**: Real-time rendering of tower clusters and spectral intensity heatmaps using React & D3.
-- **OSM Data Synthesis**: Directly ingests OpenStreetMap building geometries to model realistic signal shadows and diffraction patterns.
-- **Comparative Analysis**: Dynamic side-by-side comparison of different optimization scenarios (e.g., Coverage Focus vs. Cost Efficiency).
+This repository contains the backend infrastructure for the **SignalProphet V2.4** system (Engine: **GENETRON**). It handles high-performance spatial optimization using multi-objective genetic algorithms and serves a RESTful API to the frontend dashboard.
 
 ---
 
-## 🛠️ Technology Stack
-- **Frontend**: React.js, Tailwind CSS, Lucide Icons, Framer Motion.
-- **Backend**: FastAPI (Python), Uvicorn.
-- **Optimization Engine**: NumPy (Vectorized Math), Genetic Algorithm (Tournament Selection + Elitism).
-- **Data Pipeline**: Python (Pandas, GeoPandas, Pickle).
+## 🛠️ Key Responsibilities
+- **GA Optimization Engine**: Implementation of the NSGA-II algorithm for tower placement.
+- **REST API (FastAPI)**: Designing endpoints for simulation triggers, progress polling, and result retrieval.
+- **Fitness Evaluation**: Developing the scoring logic for signal coverage and interference.
+- **Result Logic**: Sanity checking and formatting metrics for spatial rendering.
 
 ---
 
-## 📂 Project Structure
+## 🚀 Backend Tech Stack
+- **Framework**: FastAPI
+- **Server**: Uvicorn
+- **Numerical Processing**: NumPy (Vectorized propagation scoring)
+- **State Management**: In-memory progress tracking and result caching.
+
+---
+
+## 📂 Backend Structure
 ```text
-5g-tower-optimizer-revamped/
-├── backend/                # FastAPI Server & GA Solver Core
-│   ├── api/                # API Routes & Schemas
-│   └── core/               # Genetic Algorithm & Fitness Logic
-├── frontend/               # React Dashboard & Visualization UI
-│   ├── src/                # Components, Pages, and Assets
-│   └── public/             # Static Assets
-├── data_pipeline/          # Signal propagation & OSM processing
-│   ├── signal/             # Coverage & SNR scoring models
-│   └── processed/          # Pre-computed urban grids (Peshawar, etc.)
-└── README.md
+backend/
+├── api/                # API Routes, Schemas, and Controllers
+│   ├── routes/         # Endpoint definitions (optimize, history, etc.)
+│   └── schemas/        # Pydantic models for request/response
+├── core/               # Optimization Engine Logic
+│   ├── genetic_algorithm.py  # Core NSGA-II Solver
+│   ├── fitness.py            # Objective functions
+│   └── config.py             # Hyperparameters (Population, Mutate Rate)
+└── main.py             # Entry point
 ```
 
 ---
 
-## ⚙️ Installation & Setup
-
-### 1. Backend Setup
+## 📝 Setup
 ```bash
 cd backend
 python -m venv venv
@@ -50,21 +45,6 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### 2. Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
 ---
-
-## 🧑‍💻 The Team
-- **Muhammad Taha Nasir**: Frontend Lead & Visualization Specialist.
-- **Aleesha Syeda Hayat**: Backend Architecture & API Integration.
-- **Laiba Afridi**: Data Pipeline & Signal Propagation Modeling.
-
----
-
-## 📝 License
-This project was developed for the **Spring 2026 End-of-Semester AI Project**. Proprietary Simulation Environment.
+**Author**: Aleesha Syeda Hayat  
+**Project**: End-of-Semester AI Project / Spring 2026
