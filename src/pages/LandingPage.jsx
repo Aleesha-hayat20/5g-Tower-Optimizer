@@ -171,8 +171,8 @@ const LandingPage = () => {
               <span className="material-symbols-outlined font-black text-xl">precision_manufacturing</span>
             </div>
             <div>
-              <span className="text-xl font-black tracking-tighter uppercase leading-none block">GENETRON</span>
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1.5 block">NETWORK INTELLIGENCE</span>
+              <span className="text-xl font-black tracking-tighter uppercase leading-none block">SIGNALPROPHET</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1.5 block">V2.4 LAB EDITION</span>
             </div>
           </div>
           <div className="hidden lg:flex gap-12 font-black text-slate-400 uppercase text-[10px] tracking-[0.3em]">
@@ -345,8 +345,8 @@ const LandingPage = () => {
                   <span className="material-symbols-outlined font-black text-2xl">precision_manufacturing</span>
                 </div>
                 <div>
-                  <span className="text-2xl font-black tracking-tighter uppercase text-white leading-none block">GENETRON</span>
-                  <span className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-500 mt-1 block">NETWORK INTELLIGENCE</span>
+                  <span className="text-2xl font-black tracking-tighter uppercase text-white leading-none block">SIGNALPROPHET</span>
+                  <span className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-500 mt-1 block">V2.4 LAB EDITION</span>
                 </div>
               </div>
               <p className="text-slate-400 font-medium leading-relaxed text-base">
@@ -407,8 +407,8 @@ const LandingPage = () => {
 
           {/* Bottom bar - Clean Centered Credit */}
           <div className="border-t border-white/[0.06] pt-10 flex justify-center items-center">
-            <p className="text-[12px] font-medium text-slate-400 tracking-wide">
-              Created with <span className="text-red-500 mx-1 animate-pulse">❤️</span> by Aleesha × Taha × Laiba
+            <p className="text-[10px] font-black text-slate-600 tracking-[0.5em] uppercase">
+              Proprietary Simulation Environment
             </p>
           </div>
         </div>
