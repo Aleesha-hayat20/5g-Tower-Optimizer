@@ -171,7 +171,7 @@ const LandingPage = () => {
               <span className="material-symbols-outlined font-black text-xl">precision_manufacturing</span>
             </div>
             <div>
-              <span className="text-xl font-black tracking-tighter uppercase leading-none block">SIGNALPROPHET</span>
+              <span className="text-xl font-black tracking-tighter uppercase leading-none block">GENETRON</span>
               <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1.5 block">V2.4 LAB EDITION</span>
             </div>
           </div>
@@ -204,7 +204,7 @@ const LandingPage = () => {
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-[100px] font-black text-slate-900 leading-[0.85] tracking-tighter uppercase">
-              Signal <br />
+              Genetron <br />
               <span className="text-yellow-500 drop-shadow-sm">Supremacy.</span>
             </h1>
 
@@ -345,7 +345,7 @@ const LandingPage = () => {
                   <span className="material-symbols-outlined font-black text-2xl">precision_manufacturing</span>
                 </div>
                 <div>
-                  <span className="text-2xl font-black tracking-tighter uppercase text-white leading-none block">SIGNALPROPHET</span>
+                  <span className="text-2xl font-black tracking-tighter uppercase text-white leading-none block">GENETRON</span>
                   <span className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-500 mt-1 block">V2.4 LAB EDITION</span>
                 </div>
               </div>
