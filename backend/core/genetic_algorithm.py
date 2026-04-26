@@ -125,7 +125,7 @@ class GeneticAlgorithm:
 
         return chromosome
 
-    def run(self):
+    def run(self, on_generation_complete=None):
         population = self._initialize_population()
 
         best_fitness = -9999
@@ -153,6 +153,14 @@ class GeneticAlgorithm:
             else:
                 patience_counter += 1
 
+            if on_generation_complete:
+                on_generation_complete(
+                    generation + 1,
+                    self.config.generations,
+                    float(best_fitness),
+                    fitness_history
+                )
+
             if patience_counter >= self.config.patience:
                 break
 
@@ -166,7 +174,7 @@ class GeneticAlgorithm:
                 if random.random() < self.config.crossover_rate:
                     child1, child2 = self._crossover(parent1, parent2)
                 else:
-                    child1, child2 = parent1.copy(), parent2.copy()
+                    child1, child2 = [g.copy() for g in parent1], [g.copy() for g in parent2]
 
                 child1 = self._mutate(child1)
                 child2 = self._mutate(child2)

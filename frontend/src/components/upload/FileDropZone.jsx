@@ -1,51 +1,99 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
-const FileDropZone = () => {
+const FileDropZone = ({ onFileSelect }) => {
+  const fileInputRef = useRef(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+
   const recentFiles = [
     { 
-      name: 'NYC_Manhattan_Grid.json', 
-      size: '12.4 MB', 
-      layers: '4 Layers',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA9pgV2sUUTZn9T5rPpt30xA8MbS7C9V1BiS2Nud593N8vMFh_ANKb7_0rQQrl0rf6q-jfKVT4yIWumFwVIPa87n_5euxIpr22RtNAAy82LvNLf5b-93tOGQy-4JFgcrPKKjdE5NSizj7KemAj_uUjzyjJQ2qFs00BtXgDdGdSbPydgoV_DiIDpaZPFE3FlsuOUrkaZ8Ti1Sw1t7PGAvUwgl-YTifPb_NVSTFX5jpGHyDfG13JbcvWC67zMZ5qVvWre0Z3w2v-nqV3m'
+      name: 'Peshawar_Sector_7G.json', 
+      size: '4.2 MB', 
+      layers: '6 Layers',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDNMde_Ft1Xlz-1oPCXZI3YrRqPi_MheaeUHIbHyU2FwvsjdQ2vsLjDDXZATwO82_cQeJidf4nV9SHGe8touW35Zx2qzCnGGvhtkVlJacFdH3vHXCGkGjY-AFMOz55SKumpQ49hQg7Ktd1v-aLbmMN9yhk6CsDdg9Nn1NfRolZeKr5U__IKkv7nHpZQaGsguGkqcTJFlL4oGJZrB3WrdvL7UyL9AKQKD-_p5L4GXfK77R_K4tFLIVrYh5fmzlMJ1r6pnTy0auwR_K2o'
     },
     { 
-      name: 'London_Financial_Dist.shp', 
-      size: '8.1 MB', 
-      layers: '2 Layers',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPeusIsbK2IGhxoIbm8Jyo6dxPZXCdyxRmrZR7eHSSBXjfJg1sykrUqGRjtyqibBqjKUxg2-jpu7FZn4Jc1OXDcxNwji4ual8Lp0FtunSntIkrDkL6ySB-oJvX2E4wZbQ0fFzKj8T5MBLNmB0eWSdNSvaXCl4x5330lI-NwEGWkH1aQiAlYlhVznIV9odvV0dKYlDrwNZnPd7_uA6pl7WAvUIcZhr4RDdbzX5Mma9A16F1ZyIAoMNnNqBOCGDY-n0bCBc8RWJjl5aP'
+      name: 'Islamabad_F10_Cluster.shp', 
+      size: '1.8 MB', 
+      layers: '4 Layers',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEMuJ6AJpD-AIht6yGqonDFoFdVW3RLeMPv7zRaG8NCBczI_8Ta1iSYmaK7VSBsTUWesAMKST0wdMrdIm7FS_8WB59AhYz5TZsXtl8yGEr1tN3jDNdA8SLsQGy9ahFqQOl-jmoPc7FD2TrbU2qLsTGdPX696eMg3nZyTgfAIWKv2Cq86X1Ir7fuoQ_zjZFlA4a73fuBXoKxCLyWk0m69CMfICfonfeZeXGcpRIZ7R89wTq02rBEN18F5s1Q0CVo81-G5LO-q-oBqNF'
     }
   ];
 
+  const handleBrowseClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      if (onFileSelect) onFileSelect(file);
+    }
+  };
+
   return (
-    <div className="col-span-12 lg:col-span-7 bg-white rounded-[32px] p-10 shadow-[0_20px_50px_rgba(17,24,39,0.08)] border border-gray-100">
+    <div className="bg-[#0f172a] rounded-[32px] p-10 border border-slate-800 shadow-2xl text-white font-plus-jakarta">
+      <input 
+        type="file" 
+        ref={fileInputRef} 
+        onChange={handleFileChange} 
+        className="hidden" 
+        accept=".json,.shp,.geojson,.csv"
+      />
+
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center space-x-4">
-          <div className="bg-primary-container p-3 rounded-2xl">
-            <span className="material-symbols-outlined text-gray-900">location_city</span>
+          <div className="bg-white/5 p-3 rounded-2xl border border-white/10">
+            <span className="material-symbols-outlined text-yellow-400 font-bold">location_city</span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">City Geospatial Data</h2>
+          <div>
+            <h2 className="text-xl font-bold uppercase tracking-tight">Urban Spatial Data</h2>
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">GIS / GeoJSON Input</p>
+          </div>
         </div>
-        <span className="text-xs font-semibold text-tertiary px-4 py-1 bg-tertiary-container rounded-full uppercase">Shapefile / GeoJSON</span>
+        <span className="text-[10px] font-bold text-yellow-400 px-4 py-1.5 bg-yellow-400/10 rounded-full border border-yellow-400/20 uppercase tracking-widest">
+          {selectedFile ? 'File Ready' : 'Ready to Load'}
+        </span>
       </div>
 
-      <div className="relative border-4 border-dashed border-gray-100 rounded-[24px] p-16 flex flex-col items-center justify-center text-center group hover:border-yellow-400 transition-colors cursor-pointer">
-        <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-          <span className="material-symbols-outlined text-4xl text-gray-400 group-hover:text-yellow-500">upload_file</span>
+      <div 
+        onClick={handleBrowseClick}
+        className="relative border-2 border-dashed border-slate-700 rounded-[32px] p-16 flex flex-col items-center justify-center text-center group hover:border-yellow-400 hover:bg-white/5 transition-all cursor-pointer"
+      >
+        <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/5 group-hover:scale-110 transition-transform">
+          <span className="material-symbols-outlined text-4xl text-slate-500 group-hover:text-yellow-400">
+            {selectedFile ? 'check_circle' : 'upload_file'}
+          </span>
         </div>
-        <p className="text-2xl font-bold text-gray-900 mb-1">Drag & drop city layers</p>
-        <p className="text-gray-400">Supports multi-layer GIS data including terrain and building density</p>
-        <button className="mt-8 bg-gray-900 text-white font-bold px-8 py-3 rounded-2xl hover:scale-105 active:scale-95 transition-all">
-          Browse Local Files
+        
+        {selectedFile ? (
+          <div className="animate-in zoom-in duration-300">
+            <p className="text-2xl font-bold tracking-tight text-yellow-400 mb-2 uppercase">File Injected</p>
+            <p className="text-white text-sm font-bold">{selectedFile.name}</p>
+            <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest mt-2">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB • Ready for Solver</p>
+          </div>
+        ) : (
+          <>
+            <p className="text-2xl font-bold tracking-tight text-white mb-2">Inject City Layers</p>
+            <p className="text-slate-500 text-sm font-medium">Supports multi-layer GIS data including terrain and building density</p>
+          </>
+        )}
+
+        <button className="mt-8 bg-yellow-400 text-[#0f172a] font-bold px-10 py-3.5 rounded-2xl hover:scale-105 active:scale-95 transition-all text-xs uppercase tracking-widest">
+          {selectedFile ? 'Change File' : 'Browse Local Files'}
         </button>
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-4">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         {recentFiles.map((file, index) => (
-          <div key={index} className="p-4 rounded-2xl bg-surface-container flex items-center space-x-4 border border-gray-200">
-            <img src={file.img} className="w-16 h-16 rounded-xl object-cover" alt={file.name} />
+          <div key={index} className="p-5 rounded-3xl bg-white/5 flex items-center space-x-4 border border-white/5 hover:border-yellow-400/20 transition-colors group">
+            <div className="relative">
+               <img src={file.img} className="w-16 h-16 rounded-2xl object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all" alt={file.name} />
+               <div className="absolute inset-0 border border-white/10 rounded-2xl"></div>
+            </div>
             <div>
-              <p className="font-bold text-gray-900 text-sm">{file.name}</p>
-              <p className="text-xs text-gray-400">{file.size} • {file.layers}</p>
+              <p className="font-bold text-gray-200 text-xs tracking-tight">{file.name}</p>
+              <p className="text-[10px] font-bold text-slate-500 mt-1 uppercase tracking-widest">{file.size} • {file.layers}</p>
             </div>
           </div>
         ))}

@@ -22,7 +22,10 @@ def save_result(city: str, result_payload: dict) -> str:
 
 
 def list_cached_results():
-    return sorted(os.listdir(CACHE_DIR))
+    files = [f for f in os.listdir(CACHE_DIR) if f.endswith('.json')]
+    # Sort by modification time, newest first
+    files.sort(key=lambda x: os.path.getmtime(os.path.join(CACHE_DIR, x)), reverse=True)
+    return files
 
 
 def load_cached_result(filename: str):
@@ -33,3 +36,14 @@ def load_cached_result(filename: str):
 
     with open(filepath, "r") as f:
         return json.load(f)
+
+
+def delete_cached_result(filename: str) -> bool:
+    """
+    Delete a cached result file.
+    """
+    filepath = os.path.join(CACHE_DIR, filename)
+    if os.path.exists(filepath):
+        os.remove(filepath)
+        return True
+    return False

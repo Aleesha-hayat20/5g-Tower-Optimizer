@@ -17,3 +17,14 @@ def get_result_file(filename: str):
         raise HTTPException(status_code=404, detail="Result file not found")
 
     return result
+
+
+@router.delete("/results/{filename}")
+def delete_result(filename: str):
+    from core.cache_manager import delete_cached_result
+    success = delete_cached_result(filename)
+
+    if not success:
+        raise HTTPException(status_code=404, detail="Result file not found")
+
+    return {"message": "Result deleted successfully"}

@@ -7,6 +7,7 @@ class OptimizationRequest(BaseModel):
     num_towers: int = 10
     population_size: int = 20
     generations: int = 10
+    weights: Optional[Dict[str, float]] = None
 
 
 class ClusterRequest(BaseModel):
@@ -34,3 +35,13 @@ class ClusterResponse(BaseModel):
     cluster_populations: List[int]
     iterations: int
     converged: bool
+
+
+class ProgressResponse(BaseModel):
+    city: str
+    status: str  # "running", "completed", "failed", "idle"
+    current_generation: int
+    total_generations: int
+    best_fitness: float
+    history: List[float]
+    message: Optional[str] = None
