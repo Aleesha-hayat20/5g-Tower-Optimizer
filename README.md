@@ -1,7 +1,7 @@
 # 5G-Tower-Optimizer (Backend Core)
 ### Aleesha Syeda Hayat - Backend Architecture & API Integration
 
-This repository contains the backend infrastructure for the **Genetron V2.4** system (Engine: **GENETRON**). It handles high-performance spatial optimization using multi-objective genetic algorithms and serves a RESTful API to the frontend dashboard.
+This repository contains the backend infrastructure for the **Genetron** system (Engine: **GENETRON**). It handles high-performance spatial optimization using multi-objective genetic algorithms and serves a RESTful API to the frontend dashboard.
 
 ---
 

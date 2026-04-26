@@ -172,7 +172,7 @@ const LandingPage = () => {
             </div>
             <div>
               <span className="text-xl font-black tracking-tighter uppercase leading-none block">GENETRON</span>
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1.5 block">V2.4 LAB EDITION</span>
+
             </div>
           </div>
           <div className="hidden lg:flex gap-12 font-black text-slate-400 uppercase text-[10px] tracking-[0.3em]">
@@ -346,7 +346,7 @@ const LandingPage = () => {
                 </div>
                 <div>
                   <span className="text-2xl font-black tracking-tighter uppercase text-white leading-none block">GENETRON</span>
-                  <span className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-500 mt-1 block">V2.4 LAB EDITION</span>
+
                 </div>
               </div>
               <p className="text-slate-400 font-medium leading-relaxed text-base">

@@ -337,7 +337,7 @@ const ResultsPage = () => {
       <div className="bg-white rounded-[40px] border border-slate-200 overflow-hidden shadow-sm print:hidden">
         <div className="px-10 py-10 border-b border-slate-100 flex justify-between items-center">
           <h4 className="text-2xl font-black text-slate-900 tracking-tight uppercase">Site Intelligence Matrix</h4>
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-4 py-2 bg-slate-50 rounded-xl border border-slate-100">Core Network Feed v2.4</span>
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-4 py-2 bg-slate-50 rounded-xl border border-slate-100">Core Network Feed</span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left">
