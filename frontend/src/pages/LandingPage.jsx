@@ -305,7 +305,7 @@ const LandingPage = () => {
             Architecting <br />Efficiency.
           </h2>
           <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-3xl mx-auto">
-            Our proprietary GN-NSGA-II core processes high-resolution OpenStreetMap datasets to eliminate dead zones and maximize signal density.
+            Our proprietary GN-NSGA-II core processes high-resolution OpenStreetMap datasets to eliminate dead zones and maximize network density.
           </p>
         </div>
 

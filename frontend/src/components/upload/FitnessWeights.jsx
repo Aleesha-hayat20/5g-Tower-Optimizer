@@ -4,7 +4,7 @@ const FitnessWeights = ({ weights, onChange }) => {
   const items = [
     { key: 'coverage', label: 'Coverage Capacity', desc: 'Maximize spatial signal reach', icon: 'radar' },
     { key: 'snr', label: 'Spectral Quality', desc: 'Optimize SNR distribution', icon: 'signal_cellular_alt' },
-    { key: 'interference', label: 'Signal Isolation', desc: 'Minimize cell overlap', icon: 'waves' },
+    { key: 'interference', label: 'Spectral Isolation', desc: 'Minimize cell overlap', icon: 'waves' },
     { key: 'cost', label: 'Economic Efficiency', desc: 'Optimize deployment cost', icon: 'payments' },
   ];
 
