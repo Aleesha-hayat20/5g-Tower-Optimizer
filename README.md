@@ -1,56 +1,44 @@
-# 5G-Tower-Optimizer
-### End-of-Semester_AI_Project/Spring26: The 5G Tower Placement Optimizer
+# Genetron (Frontend Visualization)
+### Muhammad Taha Nasir - Frontend Lead & Visualization Specialist
 
-**SignalProphet V2.4** (Integrated Engine: **GENETRON**) is a spatial AI and optimization platform designed to solve the telecom placement paradox. It leverages multi-objective Genetic Algorithms (NSGA-II) and high-fidelity spectral modeling to determine the mathematically optimal locations for 5G base stations in dense urban environments.
-
----
-
-## 🚀 Key Features
-- **NSGA-II Solver Core**: Simultaneously optimizes for maximum coverage, minimum interference, and optimized cost per tower.
-- **Vectorized Propagation Engine**: High-speed SNR matrix calculations using vectorized signal propagation models (Path Loss + Urban Diffraction).
-- **Interactive Spatial Visualization**: Real-time rendering of tower clusters and spectral intensity heatmaps using React & D3.
-- **OSM Data Synthesis**: Directly ingests OpenStreetMap building geometries to model realistic signal shadows and diffraction patterns.
-- **Comparative Analysis**: Dynamic side-by-side comparison of different optimization scenarios (e.g., Coverage Focus vs. Cost Efficiency).
+This repository contains the frontend dashboard and spatial visualization engine for the **Genetron** system. It provides an interactive interface for configuring 5G simulations, monitoring evolutionary progress, and analyzing spectral intensity heatmaps.
 
 ---
 
-## 🛠️ Technology Stack
-- **Frontend**: React.js, Tailwind CSS, Lucide Icons, Framer Motion.
-- **Backend**: FastAPI (Python), Uvicorn.
-- **Optimization Engine**: NumPy (Vectorized Math), Genetic Algorithm (Tournament Selection + Elitism).
-- **Data Pipeline**: Python (Pandas, GeoPandas, Pickle).
+## 🎨 Key Responsibilities
+- **Interactive Dashboard**: Developing a premium, responsive UI using React and Tailwind CSS.
+- **Spatial Visualization**: Implementing real-time map rendering and site intelligence overlays.
+- **Genetic Algorithm HUD**: Designing the "Evolutionary Execution Ledger" and live progress monitoring components.
+- **Result Analytics**: Visualizing complex metrics like Throughput (Mbps), SNR (dB), and Spectral Efficiency.
 
 ---
 
-## 📂 Project Structure
+## 🚀 Frontend Tech Stack
+- **Framework**: React.js
+- **Styling**: Tailwind CSS (with Glassmorphism and modern aesthetics)
+- **Maps**: Leaflet / Custom SVG overlays
+- **Animations**: Framer Motion & CSS Micro-animations
+- **State Management**: React Hooks & Context API
+
+---
+
+## 📂 Frontend Structure
 ```text
-5g-tower-optimizer-revamped/
-├── backend/                # FastAPI Server & GA Solver Core
-│   ├── api/                # API Routes & Schemas
-│   └── core/               # Genetic Algorithm & Fitness Logic
-├── frontend/               # React Dashboard & Visualization UI
-│   ├── src/                # Components, Pages, and Assets
-│   └── public/             # Static Assets
-├── data_pipeline/          # Signal propagation & OSM processing
-│   ├── signal/             # Coverage & SNR scoring models
-│   └── processed/          # Pre-computed urban grids (Peshawar, etc.)
-└── README.md
+frontend/
+├── src/
+│   ├── components/         # Reusable UI components (Sidebar, Header, etc.)
+│   │   ├── common/
+│   │   ├── upload/         # Simulation setup components
+│   │   └── results/        # Analytics & Visualization components
+│   ├── pages/              # Main view containers (Landing, Optimization, Results)
+│   ├── services/           # API integration (Axios)
+│   └── App.jsx             # Main routing and layout
+└── index.html              # Entry point
 ```
 
 ---
 
-## ⚙️ Installation & Setup
-
-### 1. Backend Setup
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
-```
-
-### 2. Frontend Setup
+## 📝 Setup
 ```bash
 cd frontend
 npm install
@@ -58,13 +46,5 @@ npm run dev
 ```
 
 ---
-
-## 🧑‍💻 The Team
-- **Muhammad Taha Nasir**: Frontend Lead & Visualization Specialist.
-- **Aleesha Syeda Hayat**: Backend Architecture & API Integration.
-- **Laiba Afridi**: Data Pipeline & Signal Propagation Modeling.
-
----
-
-## 📝 License
-This project was developed for the **Spring 2026 End-of-Semester AI Project**. Proprietary Simulation Environment.
+**Author**: Muhammad Taha Nasir  
+**Project**: End-of-Semester AI Project / Spring 2026
