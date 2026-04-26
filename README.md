@@ -60,9 +60,9 @@ npm run dev
 ---
 
 ## 🧑‍💻 The Team
-- **Aleesha**: Backend Architecture & API Integration.
-- **Taha**: Frontend Lead & Visualization Specialist.
-- **Laiba**: Data Pipeline & Signal Propagation Modeling.
+- **Muhammad Taha Nasir**: Frontend Lead & Visualization Specialist.
+- **Aleesha Syeda Hayat**: Backend Architecture & API Integration.
+- **Laiba Afridi**: Data Pipeline & Signal Propagation Modeling.
 
 ---
 
