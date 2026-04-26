@@ -346,7 +346,7 @@ const OptimizationPage = () => {
           <div className="p-8 lg:p-10 relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { label: 'Coverage Reach', key: 'coverage', color: 'bg-yellow-400', glow: 'shadow-[0_0_15px_rgba(250,204,21,0.3)]' },
-              { label: 'Signal Quality (SNR)', key: 'snr', color: 'bg-blue-400', glow: 'shadow-[0_0_15px_rgba(96,165,250,0.3)]' },
+              { label: 'Spectral Quality (SNR)', key: 'snr', color: 'bg-blue-400', glow: 'shadow-[0_0_15px_rgba(96,165,250,0.3)]' },
               { label: 'Interference Shield', key: 'interference', color: 'bg-red-400', glow: 'shadow-[0_0_15px_rgba(248,113,113,0.3)]' },
               { label: 'Infrastructure Cost', key: 'cost', color: 'bg-green-400', glow: 'shadow-[0_0_15px_rgba(74,222,128,0.3)]' }
             ].map((w, i) => {
