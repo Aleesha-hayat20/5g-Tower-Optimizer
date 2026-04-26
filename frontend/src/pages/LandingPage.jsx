@@ -355,7 +355,6 @@ const LandingPage = () => {
               {/* Text Links */}
               <div className="flex flex-wrap gap-x-8 gap-y-2 pt-2">
                 {[
-                  { label: 'GITHUB SOURCE', icon: 'code', action: () => window.open('https://github.com/Aleesha-hayat20/5g-Tower-Optimizer', '_blank') },
                   { label: 'SOLVER API', icon: 'terminal', action: () => window.open('http://localhost:8000/docs', '_blank') },
                 ].map((s, i) => (
                   <button key={i} onClick={s.action} className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-yellow-400 transition-all duration-300 group">
