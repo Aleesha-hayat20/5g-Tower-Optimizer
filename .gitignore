@@ -1,3 +1,13 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
 # Python
 __pycache__/
 *.py[cod]
@@ -5,73 +15,44 @@ __pycache__/
 *.pyd
 .Python
 *.egg-info/
-dist/
-build/
-.eggs/
 *.egg
 
-# Virtual environments
+# Node / React
+node_modules/
+dist/
+build/
+.npm
+frontend/dist/
+frontend/build/
+
+# Virtual Environments
 venv/
 .venv/
 env/
 ENV/
+backend/venv/
 
-# Environment variables — NEVER commit these
+# Environment Variables
 .env
-.env.local
-.env.production
-.env.*.local
+.env.*
 
-# Jupyter Notebooks checkpoints
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-
-# Data files — too large for git
-data-pipeline/sample_data/*.csv
-data-pipeline/sample_data/*.geojson
-data-pipeline/sample_data/*.json
+# Data & Large Files
+data_pipeline/sample_data/*.csv
+data_pipeline/sample_data/*.geojson
+data_pipeline/sample_data/*.json
+data_pipeline/processed/
 *.pkl
 *.parquet
-
-# Node / React
-node_modules/
-frontend/build/
-frontend/dist/
-.npm
-
-# Database
 *.db
 *.sqlite3
-postgres_data/
 
-# Redis dump
-dump.rdb
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-.DS_Store
-Thumbs.db
-
-# Logs
+# Logs & Cache
 *.log
 logs/
-celery*.log
+backend/results_cache/
+.pytest_cache/
+.ipynb_checkpoints/
 
-# Docker volumes
+# Docker
 postgres_data/
 redis_data/
-
-# Coverage reports
-htmlcov/
-.coverage
-coverage.xml
-
-#backend structuring
-backend/venv/
-backend/results_cache/
-backend/.pytest_cache/
-__pycache__/
-*.pyc
