@@ -41,21 +41,61 @@
 
 ## ⚙️ Installation & Setup
 
-### 1. Backend Setup
-```bash
+Below are explicit, OS-specific steps to run the backend and frontend locally.
+
+### Backend (Python)
+
+Windows (PowerShell):
+```powershell
 cd backend
 python -m venv venv
-source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+.\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-python main.py
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-### 2. Frontend Setup
+macOS / Linux (bash):
 ```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Alternative (run from project root):
+```powershell
+uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Health check endpoint: http://127.0.0.1:8000/health
+
+Notes:
+- If you use environment variables, place them in `backend/.env` (project uses `python-dotenv` if present).
+- `main.py` defines the FastAPI `app`; `uvicorn` is the recommended runner for development.
+
+### Frontend (Node.js & Vite)
+
+Prerequisite: Node.js 18+ recommended.
+
+```powershell
 cd frontend
 npm install
 npm run dev
 ```
+
+Vite dev server default URL: http://localhost:5173
+
+### Run tests (optional)
+
+Make sure backend dependencies are installed and venv is active:
+```powershell
+cd backend
+pip install -r requirements.txt
+pytest -q
+```
+
+If you'd like, I can also add a short troubleshooting section or a single `scripts` block that runs backend and frontend concurrently.
 
 ---
 
